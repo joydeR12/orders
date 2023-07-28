@@ -1,0 +1,24 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    form{
+        margin-bottom: 20px;
+    }
+   </style>
+</head>
+<body style="background-color: rgb(241, 182, 234);">
+    <h1 style="text-align: center;">Add your favourate menu and we shall deliver it in less than 10mins</h1>
+    <h3 style="margin-top: 40px;">add your today's menu</h3>
+    <form action="{% url 'add' %}" method="post">
+        {% csrf_token %}
+    {{ form }}       
+ <input type="submit"  name="submit">
+    </form>
+    <a href="{% url 'index' %}"> View today's menu</a>
+</body>
+</html>
